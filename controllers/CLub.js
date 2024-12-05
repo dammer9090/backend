@@ -53,7 +53,7 @@ const createClub = async (req, res) => {
         message: "Failed to create club, could not find club",
       });
       
-    // res.render('index');
+  
 
     res.status(200).json({
       success: true,
@@ -92,10 +92,7 @@ const getClub = async (req, res) => {
 
   } catch (err) {
     console.log("Failed to get club data", err);
-    // res.status(500).json({
-    //     success:false,
-    //     message:"Failed to get club data",err
-    // })
+ 
   }
 };
 
