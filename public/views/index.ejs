@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clubs {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 89%;
+            margin: auto;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .club {
+
+            transition: all;
+            transition-duration: 1000ms;
+            box-shadow: 0px 0px 20px rgb(202, 202, 202);
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            background-color: rgba(255, 234, 255, 0.493);
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .club:hover {
+            box-shadow: 0px 0px 20px rgb(255, 98, 255) !important;
+
+            scale: 0.95;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to college clubs <website></website>
+    </h1>
+    <a href="CreateClub">Create More Club</a>
+    <div id="clubs">
+        <% club.forEach(data=> { %>
+
+            <div class="club">
+                <img src=<%=data.image %> width="300"/>
+
+                <h2>Title : <%= data.title %>
+                </h2>
+                <p>Description : <%= data.description %>
+                </p>
+                <p>Venue : <%= data.venue %>
+                </p>
+                <button onclick="deleteClub(  '<%= data._id %>' )">Delete</button>
+                <button onclick="updateClub('<%= data._id %>')">Update</button>
+            </div>
+           
+            <% }); %>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
